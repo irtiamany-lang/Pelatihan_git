@@ -1,3 +1,0 @@
-# Pelatihan_git
-
-hello
