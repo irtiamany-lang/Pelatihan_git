@@ -136,3 +136,54 @@ while(flag <= 10) {
     flag+=2;
 }
 console.log("===SELESAI===")
+
+//Array Javascript
+console.log("===Array Javacript===")
+var angka = [2, 5, 1, 3, 4]
+console.log(angka[0])
+console.log(angka[2])
+console.log(angka)
+
+//Array 
+//Leght 
+console.log(angka.length)
+
+//Push
+console.log("Sebelum Push" +angka)
+angka.push(9)
+console.log("Setelah Push : "+angka)
+
+//Pop
+console.log("Sebelum Pop: "+ angka)
+angka.pop()
+console.log("Setelah Pop : "+ angka)
+
+//Unshift
+console.log("Sebelum unshift : "+ angka)
+angka.unshift(8)
+console.log("Setelah unshift : "+ angka)
+
+//shift
+console.log("Sebelum shift : "+ angka)
+angka.shift()
+console.log("Setelah shift : "+ angka)
+
+//Join
+var peserta =["Andra", "Thaufik", "Adit", "Deby"]
+console.log(peserta)
+
+console.log("Sebelum Join")
+console.log(peserta)
+//peserta.join("-")
+console.log("Setelah Join")
+console.log(peserta.join("-"))
+
+//Split
+var nama = "Irtiyaah Nailah Zaky Amany"
+console.log("Sebelum split")
+console.log(nama)
+console.log("Setelah split")
+console.log(nama.split(" "))
+console.log(nama.length)
+
+
