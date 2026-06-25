@@ -186,4 +186,59 @@ console.log("Setelah split")
 console.log(nama.split(" "))
 console.log(nama.length)
 
+var peserta =["Andra", "Thaufik", "Adit", "Deby"]
+console.log("Sebelum sort")
+console.log(peserta)
+console.log("Setelah sort")
+console.log(peserta.sort())
 
+var peserta =["Andra", "Thaufik", "Adit", "Deby"]
+console.log("Sebelum sort")
+console.log(peserta)
+console.log("Setelah reverse")
+console.log(peserta.reverse())
+console.log(peserta)
+
+console.log("Sebelum slice")
+console.log(peserta)
+console.log("Setelah slice")
+var newPeserta = peserta.slice(2,3)
+console.log(newPeserta)
+console.log(peserta)
+
+
+console.log("Sebelum splice")
+console.log(peserta)
+console.log("Setelah splice")
+console.log(peserta)
+peserta.splice(2,2,"Heldi","Hudda")
+console.log(peserta)
+
+console.log("Sebelum splice")
+console.log(peserta)
+console.log("Setelah splice")
+console.log(peserta)
+peserta.splice(2,0,"Heldi","Hudda")
+console.log(peserta)
+
+console.log("Sebelum splice")
+console.log(peserta)
+console.log("Setelah splice")
+peserta.splice(1,2)
+console.log(peserta)
+
+//Looping Array
+console.log("====Looping Array===")
+console.log("===Contoh 1===")
+var arr = ['Jeruk', 'Mangga', 'Apel'];
+for(var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
+
+console.log("===Contoh 2===")
+var names = ["John", "dose", "jack"]
+var i = 0
+while (i < names.length) {
+    console.log(names[i])
+    i++
+}
