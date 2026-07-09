@@ -1,128 +1,26 @@
 const express = require('express');
+const { movieRouter } = require('./srs/routes/movieRouter');
+const userRouter = require('../my-express crud-mysql/srs/routes/userRouter');
 const app = express();
 const port = 3000;
 
-let movies = [
-    {id: 1, title: "spiderman", year: 2002},
-    {id: 2, title: "Jhon wick", year: 2014},
-    {id: 3, title: "The Avegers", year: 2012},
-    {id: 4, title: "Logan", year: 2017}
-]
 
-// const getMovies = (req, res) => {
-//   let {title} = req.query 
+app.use('/api', movieRouter)
 
-//    console.log(title)
-
-//    if(title == undefined){
-//    title = ""
-//    }
-
-//    let result = ""
-
-//    movies.forEach((item, index) => {
-//     if(item.title.toLowerCase().includes(title)) {
-//     result += `<h3> ${index+1}.</br>tittle : ${item.title}<br>year : ${item.year}`
-//     }
-//     // if (result === "")
-
-//     // res.send(`<h3>Data tidak ditemukan.<hbr>`)
-//   })
-//   res.send(result);
-// }
-
-
-// const getMoviesId = (req, res) => {
-//   let {id} = req.params;
-//   let hasil = movies.find((item) => {
-//     return item.id === Number(id)
-//   })
-// // if(hasil){
-// //   return res.send("<h3>Movie tidak dapat ditemukan</br>")
-// // }
-//   res.send(`<h3>Title: ${hasil.title} <br> Year: ${hasil.year}</br>`)
-// }
-
-// app.get('/movies', getMovies);
-// app.get('/movies/:id', getMoviesId);
-
-
-
-
-
-const getMoviesApi = (req, res) => {
-  let {title, year} = req.query 
-  // console.log(title)
-
-  if(title == undefined){
-   title = ""
-  }
-
-  // let {id, title} = req.params;
-   let result = movies.filter((item, index) => {
-    return (item.title.toLocaleLowerCase().includes(title.toLocaleLowerCase()) && (!year || item.year == year)
-   )
-  })
-  if(!result){
-    res.json("<h3>Movie tidak dapat ditemukan</br>")
-  }
-   res.json(result)
-  }
-
-  
-//   
-// }
-
-const getMoviesbyIdApi = (req, res) => {
-let {id} = req.params;
-let hasil = movies.find((item) => {
-  return item.id === Number(id)
-})
-res.json(hasil)
-}
-
-const loggerMiddleware = (req, res, next) => {
-  console.log("Ada request masuk")
-  next() 
-}
-
-const tokenMiddleware = (req, res, next) => {
-  let {token} = req.query
-
-  if (token === "12345"){
-    next()
-  } else {
-    res.status(401).json({
-      message: "Token tidak valid"
-    })
-  }
-}
-
-const checkMovieIdMiddleware = (req, res, next) => {
-  let { id } = req.params
-  let result = movies.find(item => item.id === Number(id))
-  if (result) {
-    next()
-  } else {
-    res.status(404).json({ message: "Movie tidak ditemukan"})
-  }
-}
-
-const timeMiddleware = (req, res, next) => {
-  console.log(new Date());
-  next()
-}
-
-
-
-app.get('/api/movies', loggerMiddleware, timeMiddleware, tokenMiddleware, getMoviesApi)
-app.get('/api/movies/:id',loggerMiddleware, checkMovieIdMiddleware, getMoviesbyIdApi)
+// app.get('/api/movies/:id',movieRouter)
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello dunia!');
 });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+
+// app.get('/movies', getMovies);
+// app.get('/movies/:id', getMoviesId);
+
+// app.get('api/movies', getMoviesApi);
+// app.get('/apimovies/:id', getMoviesbyIdApi);
