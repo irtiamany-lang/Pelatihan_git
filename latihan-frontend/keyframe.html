@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .animasi{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            /* animation-name: example;
+            animation-duration: 5s; */
+         }
+
+        .progress{
+            width: 1000px;
+            height: 20px;
+            animation: example;
+            animation-duration: 10s;
+        }
+
+        /* @keyframes example{
+            from{
+                background-color: black;
+            }
+            to{
+                background-color: burlywood;
+            }
+        
+        } */
+
+        @keyframes example {
+            0%{
+                background-color: black;
+                width: 0%;
+            }
+
+            20%{
+                background-color: rgb(193, 221, 33);
+            }
+
+            40%{
+                background-color: rgb(29, 194, 206);
+            }
+
+            60%{
+                background-color: rgb(60, 35, 201);
+            }
+
+            100%{
+                background-color: rgb(173, 38, 38);
+                width: 100%;
+            }
+
+            
+        }
+
+        @keyframes example {
+        
+        }
+
+        p{
+           
+        } 
+
+        @media only screen and(max-width: 600px) { 
+        }
+        body{
+            background-color: aquamarine;
+        }
+
+    </style>
+    
+    <div class="animasi"></div>
+    <div class="progress">progress</div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Facilis ex odio totam cumque praesentium quia iste rem officiis molestiae? 
+        Quidem sequi nobis quod nostrum, 
+        ducimus error maxime alias! Rerum, distinctio.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+p 
+{
+                background-color: palevioletred;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12;
+                text-align: center;
+            }
+
+.p2 
+{
+                background-colorco: rgb(209, 75, 153);
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12;
+                text-align: justify;
+            }
+
+    img{
+        height: 200px;
+        width: 200;
+    }
+
+    div{
+        height: 200px;
+        width: 200;
+        background-color: antiquewhite;
+
+    }
